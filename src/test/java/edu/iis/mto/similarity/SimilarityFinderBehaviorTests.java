@@ -19,7 +19,6 @@ public class SimilarityFinderBehaviorTests {
   void setUpVariables() {
     sequenceSearcherStyleDoubler = new SequenceSearcherStyleDoubler();
     similarityFinder = new SimilarityFinder(sequenceSearcherStyleDoubler);
-
   }
 
   @Test
