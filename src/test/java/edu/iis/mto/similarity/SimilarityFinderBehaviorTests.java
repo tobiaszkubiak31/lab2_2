@@ -1,7 +1,9 @@
 package edu.iis.mto.similarity;
 
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import edu.iis.mto.search.SequenceSearcherStyleDoubler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -64,6 +66,11 @@ public class SimilarityFinderBehaviorTests {
 
   @Test
   void checkAmountOfOperatesSequenceSearcher() {
+    seq1 = new int[]{2, 22, 1};
+    seq2 = new int[]{1, 4, 2};
+
+    this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
+    assertThat(sequenceSearcherStyleDoubler.getMethodSearchCallCounter(), is(3));
 
   }
 
