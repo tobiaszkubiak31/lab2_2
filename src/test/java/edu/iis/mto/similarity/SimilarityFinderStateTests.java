@@ -33,7 +33,12 @@ class SimilarityFinderStateTests {
   }
   @Test
   void calculateIfTwoSequencesAllCommonValues() {
+    seq1 = new int[]{2, 51, 1};
+    seq2 = new int[]{2, 51, 1};
+    expectedSimilarity = 1.0;
 
+    calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
+    assertEquals(expectedSimilarity, calculatedSimilarity);
   }
 
   @Test
