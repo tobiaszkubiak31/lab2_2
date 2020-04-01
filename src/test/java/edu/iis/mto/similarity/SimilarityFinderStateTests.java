@@ -62,8 +62,13 @@ class SimilarityFinderStateTests {
   }
 
   @Test
-  void calculateIfTwoSequencesHaveSixtySimilarity() {
+  void calculateIfSequencesHaveOneDifferentValue() {
+    seq1 = new int[]{ 4,2,1};
+    seq2 = new int[]{ 5,2,1};
+    expectedSimilarity = 0.5;
 
+    calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
+    assertEquals(expectedSimilarity, calculatedSimilarity);
   }
   @Test
   void calculateIfSequencesHaveTwoDiffrentValues() {
