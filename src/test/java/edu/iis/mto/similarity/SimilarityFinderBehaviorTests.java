@@ -32,7 +32,12 @@ public class SimilarityFinderBehaviorTests {
 
   @Test
   void SecondSequenceIsNull() {
+    seq2 = null;
+    seq1 = new int[]{4, 22, 1};
 
+    assertThrows(
+        NullPointerException.class,
+        () -> this.similarityFinder.calculateJackardSimilarity(seq1, seq2));
   }
 
   @Test
