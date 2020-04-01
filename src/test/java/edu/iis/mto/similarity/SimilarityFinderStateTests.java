@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SimilarityFinderStateTests {
+
   private SequenceSearcherStyleDoubler sequenceSearcherStyleDoubler;
   private SimilarityFinder similarityFinder;
   private int[] seq1;
@@ -31,6 +32,7 @@ class SimilarityFinderStateTests {
     calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
     assertEquals(expectedSimilarity, calculatedSimilarity);
   }
+
   @Test
   void calculateIfTwoSequencesAllCommonValues() {
     seq1 = new int[]{2, 51, 1};
@@ -63,17 +65,18 @@ class SimilarityFinderStateTests {
 
   @Test
   void calculateIfSequencesHaveOneDifferentValue() {
-    seq1 = new int[]{ 4,2,1};
-    seq2 = new int[]{ 5,2,1};
+    seq1 = new int[]{4, 2, 1};
+    seq2 = new int[]{5, 2, 1};
     expectedSimilarity = 0.5;
 
     calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
     assertEquals(expectedSimilarity, calculatedSimilarity);
   }
+
   @Test
   void calculateIfSequencesHaveTwoDifferentValues() {
-    seq1 = new int[]{ 4,3,1};
-    seq2 = new int[]{ 5,6,1};
+    seq1 = new int[]{4, 3, 1};
+    seq2 = new int[]{5, 6, 1};
     expectedSimilarity = 0.2;
 
     calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
