@@ -43,7 +43,12 @@ class SimilarityFinderStateTests {
 
   @Test
   void calculateIfFirstSequenceIsEmpty() {
+    seq1 = new int[]{};
+    seq2 = new int[]{1, 22, 3};
+    expectedSimilarity = 0.0;
 
+    calculatedSimilarity = this.similarityFinder.calculateJackardSimilarity(seq1, seq2);
+    assertEquals(expectedSimilarity, calculatedSimilarity);
   }
 
   @Test
